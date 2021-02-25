@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition"
+                template="/views/layout.jsp">     <!-- nazwa pliku jsp determinującego wygląd-->
+        <put-attribute name="title" value=""/>     <!--tytuł zakładki w przeglądarce-->
+        <put-attribute name="header" value="/views/header.jsp"/>
+        <put-attribute name="menu" value="/views/menu.jsp"/>
+        <put-attribute name="body" value=""/>
+        <put-attribute name="footer" value="/views/footer.jsp"/>
+    </definition>
+
+    <definition name="hello" extends="base.definition">
+        <put-attribute name="title" value="Hello"/>
+        <put-attribute name="body" value="/views/hello.jsp"/>
+    </definition>
+
+    <definition name="camaro" extends="base.definition">
+        <put-attribute name="title" value="Chev Camaro"/>
+        <put-attribute name="body" value="/views/products/camaro.jsp"/>
+    </definition>
+
+    <definition name="citroen" extends="base.definition">
+        <put-attribute name="title" value="Citroen C3"/>
+        <put-attribute name="body" value="/views/products/citroen.jsp"/>
+    </definition>
+
+    <definition name="impala" extends="base.definition">
+        <put-attribute name="title" value="Chev Impala"/>
+        <put-attribute name="body" value="/views/products/impala.jsp"/>
+    </definition>
+
+    <definition name="mini" extends="base.definition">
+        <put-attribute name="title" value="Mini 1959"/>
+        <put-attribute name="body" value="/views/products/mini.jsp"/>
+    </definition>
+
+    <definition name="multipla" extends="base.definition">
+        <put-attribute name="title" value="Fiat Multipla"/>
+        <put-attribute name="body" value="/views/products/multipla.jsp"/>
+    </definition>
+
+    <definition name="volkzwagen" extends="base.definition">
+        <put-attribute name="title" value="Volkzvagen T1"/>
+        <put-attribute name="body" value="/views/products/volkzwagen.jsp"/>
+    </definition>
+
+    <definition name="volvo" extends="base.definition">
+        <put-attribute name="title" value="Volvo S60"/>
+        <put-attribute name="body" value="/views/products/volvo.jsp"/>
+    </definition>
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="title" value="Login"/>
+        <put-attribute name="body" value="/views/login.jsp"/>
+    </definition>
+
+    <definition name="accessDenied" extends="base.definition">
+        <put-attribute name="title" value="AccessDenied"/>
+        <put-attribute name="body" value="/views/accessDenied.jsp"/>
+    </definition>
+
+    <definition name="appUser" extends="base.definition">
+        <put-attribute name="title" value="AppUser"/>
+        <put-attribute name="body" value="/views/appUser.jsp"/>
+    </definition>
+
+    <definition name="register" extends="base.definition">
+        <put-attribute name="title" value="Register"/>
+        <put-attribute name="body" value="/views/register.jsp"/>
+    </definition>
+
+    <definition name="order" extends="base.definition">
+        <put-attribute name="title" value="Order"/>
+        <put-attribute name="body" value="/views/order.jsp"/>
+    </definition>
+
+    <!-- widok odpowiadający za dodawanie roli-->
+    <definition name="appUserRole" extends="base.definition">
+        <put-attribute name="title" value="AppUserRole"/>
+        <put-attribute name="body" value="/views/appUserRole.jsp"/>
+    </definition>
+
+    <definition name="carOwned" extends="base.definition">
+        <put-attribute name="title" value="CarOwned"/>
+        <put-attribute name="body" value="/views/carOwned.jsp"/>
+    </definition>
+
+    <definition name="products" extends="base.definition">
+        <put-attribute name="title" value="Products"/>
+        <put-attribute name="body" value="/views/products.jsp"/>
+    </definition>
+
+    <definition name="orderSuccessful" extends="base.definition">
+        <put-attribute name="title" value="OrderSuccessful"/>
+        <put-attribute name="body" value="/views/orderSuccessful.jsp"/>
+    </definition>
+
+    <definition name="orderUnsuccessful" extends="base.definition">
+        <put-attribute name="title" value="OrderUnsuccessful"/>
+        <put-attribute name="body" value="/views/orderUnsuccessful.jsp"/>
+    </definition>
+
+    <definition name="orderViewer" extends="base.definition">
+        <put-attribute name="title" value="OrderViewer"/>
+        <put-attribute name="body" value="/views/orderViewer.jsp"/>
+    </definition>
+
+    <definition name="orderUnavaliable" extends="base.definition">
+        <put-attribute name="title" value="OrderUnavaliable"/>
+        <put-attribute name="body" value="/views/orderUnavaliable.jsp"/>
+    </definition>
+
+    <definition name="registrationSuccessful" extends="base.definition">
+        <put-attribute name="title" value="CRegistrationDone"/>
+        <put-attribute name="body" value="/views/registrationSuccessful.jsp"/>
+    </definition>
+
+    <definition name="pagedUsers" extends="base.definition">
+        <put-attribute name="title" value="PagedUsers"/>
+        <put-attribute name="body" value="/views/pagedUsers.jsp"/>
+    </definition>
+
+</tiles-definitions>

@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+table tr td th:empty {
+    width: 100px;
+}
+
+table tr td {
+    padding-right: 75px;
+    padding-bottom: 15px;
+    border: 1px solid black;
+}
