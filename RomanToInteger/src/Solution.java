@@ -1,10 +1,6 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class Solution {
-
     List<String> allowedValuesInOrder = Arrays.asList("I", "V", "X", "L", "C", "D", "M");
 
     Map<String, Integer> romanValues = new HashMap<String, Integer>(){{
@@ -17,13 +13,27 @@ class Solution {
         put("M", 1000);
     }};
 
-
-
     public int romanToInt(String s) {
-        for(char n: s.toUpperCase().toCharArray()){
-            System.out.print(n);
+        if(s.length()>15 || s.length()<1){
+            return -1;
         }
-        return 3;
+        int valueOfRoman = 0;
+        List<String> listOfRomanNumbers = new ArrayList<>(Arrays.asList(s.toUpperCase().split("")));
+        int recentValue = romanValues.get(listOfRomanNumbers.get(0));
+        for(String n: listOfRomanNumbers){
+            if(!allowedValuesInOrder.contains(n)){
+                return -1;
+            }
+            int currentValue = romanValues.get(n);
+            if(currentValue <= recentValue){
+                valueOfRoman += currentValue;
+            }
+            else{
+                valueOfRoman += currentValue;
+                valueOfRoman -= 2*recentValue;
+            }
+            recentValue = currentValue;
+        }
+        return valueOfRoman;
     }
 }
-
