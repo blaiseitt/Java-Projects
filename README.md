@@ -1,0 +1,1 @@
+TODO 1. ADD tests to every task + create script which tests every task
