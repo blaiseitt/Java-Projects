@@ -3,3 +3,8 @@
 *.iws
 target/
 out/
+/.metadata/
+.classpath
+.project
+.settings/
+bin/
