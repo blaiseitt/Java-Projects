@@ -39,7 +39,7 @@ class LongestCommonPrefixTest {
 	}
 	
 	@Test
-	void test4() {
+	void test5() {
 		String expected = "a";
 		String[] strs = {"a","ac"};
 		
