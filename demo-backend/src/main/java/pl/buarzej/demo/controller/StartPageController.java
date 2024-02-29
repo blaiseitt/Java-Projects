@@ -1,15 +1,13 @@
 package pl.buarzej.demo.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class StartPageController {
 
-    @GetMapping("/")
-    public String startPage() {
-        return "tu na razie jest ściernisko";
-
-        //
+    @GetMapping(value = "/")
+    public String home() {
+        return "home";
     }
 }
