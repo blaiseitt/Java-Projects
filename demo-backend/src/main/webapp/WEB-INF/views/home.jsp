@@ -1,7 +1,7 @@
-<Html>
-
-<body>
-<h1>HELLO XD</h1>
-</body>
-
-</Html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<div>
+xddd
+</div>
+</html>
