@@ -11,6 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CsrfFilter;
+import org.springframework.web.filter.CharacterEncodingFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -31,10 +33,25 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        filter.setForceEncoding(true);
+        http.addFilterBefore(filter, CsrfFilter.class);
+
         http
-                .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/helloWorld").authenticated()
-                        .anyRequest().permitAll());
+            .authorizeHttpRequests((authz) -> authz
+                    .requestMatchers("/helloWorld").hasRole("ADMIN")
+                    .anyRequest().permitAll())
+            .formLogin(form -> form
+                    .loginPage("/login")
+                    .usernameParameter("login")
+                    .passwordParameter("password")
+                    .permitAll())
+            .logout(form -> form
+                    .logoutSuccessUrl("/login?logout")
+                    .permitAll())
+            .exceptionHandling(exception -> exception
+                    .accessDeniedPage("/accessDenied"));
 
         return http.build();
     }

@@ -8,20 +8,20 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 
-//import java.util.Date;
-
 @Entity
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
+    @Setter
     private long id;
 
     @Column(nullable = false, unique = true)
     @Getter
     @Setter
-    private String name;
+    private String login;
 
     @Column(nullable = false)
     @Getter
@@ -39,6 +39,6 @@ public class User {
     @Setter
     private Set<UserRole> userRole  = new HashSet<UserRole>(0);
 
-    //private Date creationDate;
+    //TODO private Date creationDate;
 
 }

@@ -8,5 +8,5 @@ import pl.buarzej.demo.model.domain.UserRole;
 @Transactional
 @Repository
 public interface UserRoleRepository extends JpaRepository<UserRole, Long> {
-
+    UserRole findByRole(String role);
 }
