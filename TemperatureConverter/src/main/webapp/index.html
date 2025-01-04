@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+</head>
+<body>
+<br/>
+<center>
+    <p>This web app converts Celsius into Farenheit and Kelvin in real time.</p>
+</center>
+<br/>
+<table border="2" cellspacing="1" width="300" align="center">
+    <tr>
+        <th>Unit</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <th>Celsius</th>
+        <th><input name="celsiusDegrees" type="text" id='celsiusDegrees' onkeyup="rescaleTemperature()"></th>
+    </tr>
+    <tr>
+        <th>Kelwin</th>
+        <th><input name="kelwinDegrees" type="text" id='kelwinDegrees' readonly></th>
+    </tr>
+    <tr>
+        <th>Fahrenheit</th>
+        <th><input name="fahrenheitDegrees" type="text" id='fahrenheitDegrees' readonly></th>
+    </tr>
+</table>
+<p id="error" style="color:#e32d2d"><p>
+<script>
+    function setErrorMessage(message){
+        document.getElementById("error").innerHTML=message;
+    }
+
+    function rescaleTemperature(){
+        let celsiusAsString = document.getElementById("celsiusDegrees").value;
+        if(isNaN(celsiusAsString)){
+            setErrorMessage("Incorrect number!");
+            document.getElementById("kelwinDegrees").value=Number.NaN;
+            document.getElementById("fahrenheitDegrees").value=Number.NaN;
+            return;
+        }
+        setErrorMessage("");
+        let celsiusAsFloat = parseFloat(celsiusAsString);
+        let kelvinAsFloat = (celsiusAsFloat + 273.15).toFixed(1);
+        let fahrenheitAsFloat = ((celsiusAsFloat-32)/1.8).toFixed(1);
+
+        document.getElementById("kelwinDegrees").value=kelvinAsFloat;
+        document.getElementById("fahrenheitDegrees").value=fahrenheitAsFloat;
+    }
+</script>
+
+
+</body>
+</html>

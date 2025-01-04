@@ -1,0 +1,1 @@
+java -classpath target/Selenium-Testing-1.0-shaded.jar pl.mkowsky.Main -homePage http://neo.dmcs.p.lodz.pl/~wsan/broken/ -checkSubPages true
