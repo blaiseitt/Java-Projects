@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+
+DIV.header {
+    color: #ff000a;
+    background-image: url('../images/header.JPG'); /*dwie kropki bo wyjście do ścieżki wyżej w stosunku do folderu w którym się znajdujemy*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
