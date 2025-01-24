@@ -1,4 +1,4 @@
-public class Solution {
+class Solution {
 
     private static int ASCII_A_VALUE = 65-1;
     private static int NUMBER_OF_LETTERS = 26;

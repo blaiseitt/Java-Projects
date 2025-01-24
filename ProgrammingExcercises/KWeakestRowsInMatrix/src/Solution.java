@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Solution {
+class Solution {
     public int[] kWeakestRows(int[][] mat, int k) {
         List<Integer> rowsStrength = new ArrayList<>();
         int rows = mat.length;

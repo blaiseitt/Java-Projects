@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class Solution {
+class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         long sum = getStoredValue(l1) + getStoredValue(l2);
         ListNode out = createLinkedList(sum);

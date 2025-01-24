@@ -1,4 +1,4 @@
-public class Solution {
+class Solution {
     public int maximumWealth(int[][] accounts) {
         int maxWealth = 0;
         for(int[] acc: accounts){

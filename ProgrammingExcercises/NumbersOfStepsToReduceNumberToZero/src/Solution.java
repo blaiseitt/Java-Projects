@@ -1,4 +1,4 @@
-public class Solution {
+class Solution {
     public int numberOfSteps(int num) {
         int stepsCount = 0;
 
